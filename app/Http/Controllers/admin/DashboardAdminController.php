@@ -1,24 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Berita;
 use App\Models\Anggota;
+use App\Models\Berita;
 use App\Models\User;
-use DB;
 
-class HomeController extends Controller
+class DashboardAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $berita = Berita::orderBy('id','DESC')->get();
-        $anggota = Anggota::orderBy('id','DESC')->get();
-        return view('user.main',compact('berita','anggota'));
+        $totalAnggota = Anggota::count();
+        $totalBerita = Berita::count();
+        $totalUser = User::count();
+
+        
+        return view('admin.main')
+        ->with('totalAnggota',$totalAnggota)
+        ->with('totalUser',$totalUser)
+        ->with('totalBerita',$totalBerita);
     }
 
     /**
@@ -42,8 +47,7 @@ class HomeController extends Controller
      */
     public function show(string $id)
     {
-        $ta = Berita::find($id);
-        return view('user.berita.detail',compact('ta'));
+        //
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('client.index')
+@extends('user.index')
 @section('content')
 
     <!-- ======= Breadcrumbs ======= -->

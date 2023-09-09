@@ -6,6 +6,11 @@ use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\LoginController;
 //user
 use App\Http\Controllers\user\HomeController;
+//admin
+use App\Http\Controllers\admin\DashboardAdminController;
+use App\Http\Controllers\admin\BeritaAdminController;
+use App\Http\Controllers\admin\AnggotaAdminController;
+use App\Http\Controllers\admin\UserAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +29,13 @@ Route::get('/', function () {
 
 //admin
 Route::resource('/dashboard',DashboardAdminController::class)->middleware('auth');
+Route::resource('/beritaa',BeritaAdminController::class)->middleware('auth');
+Route::resource('/anggotaa',AnggotaAdminController::class)->middleware('auth');
+Route::resource('/user',UserAdminController::class)->middleware('auth');
+
+Route::get('/anggotaa-edit/{id}',[AnggotaAdminController::class,'edit'])->middleware('auth');
+Route::get('/beritaa-edit/{id}',[BeritaAdminController::class,'edit'])->middleware('auth');
+Route::get('/user-edit/{id}',[UserAdminController::class,'edit'])->middleware('auth');
 
 //client
 Route::resource('/home',HomeController::class);

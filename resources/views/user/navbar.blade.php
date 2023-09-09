@@ -29,9 +29,10 @@
                 <ul>
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ url('/home#berita') }}">Berita</a></li>
-                    <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="#"><span>Tentang</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                          {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                             <ul>
                               <li><a href="#">Deep Drop Down 1</a></li>
                               <li><a href="#">Deep Drop Down 2</a></li>
@@ -40,34 +41,36 @@
                               <li><a href="#">Deep Drop Down 5</a></li>
                             </ul>
                           </li> --}}
-                          <li><a href="{{ url('/home#visimisi') }}">Visi & Misi</a></li>
-                          <li><a href="{{ url('/home#anggota') }}">Anggota</a></li>
+                            <li><a href="{{ url('/home#visimisi') }}">Visi & Misi</a></li>
+                            <li><a href="{{ url('/home#anggota') }}">Anggota</a></li>
                         </ul>
-                      </li>
-                      @if(Auth::check())
-    @if(Auth::user()->role == 'admin')
-        <!-- Tampilan untuk pengguna admin -->
-    @else
-        <!-- Tampilan untuk pengguna biasa -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                {{ Auth::user()->name }}
-            </a>
-            <ul class="dropdown-menu">
-                <form action="/logout" method="POST">
-                    @csrf
-                    <li><button class="dropdown-item" href="#">Logout</button></li>
-                </form>
-            </ul>
-        </li>
-    @endif
-@else
-    <li><a href="/login">Login</a></li>
-@endif
+                    </li>
+                    @if (Auth::check())
+                        @if (Auth::user()->role == 'admin')
+                            <!-- Tampilan untuk pengguna admin -->
+                            <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                        @else
+                            <!-- Tampilan untuk pengguna biasa -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    {{ Auth::user()->name }}
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <li><button class="dropdown-item" href="#">Logout</button></li>
+                                    </form>
+                                </ul>
+                            </li>
+                        @endif
+                    @else
+                        <li><a href="/login">Login</a></li>
+                    @endif
 
 
-                      {{-- <ul class="navbar-nav ml-auto">
-                        @if(Auth::check())
+                    {{-- <ul class="navbar-nav ml-auto">
+                        @if (Auth::check())
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -81,7 +84,7 @@
                             <!-- Tampilkan tombol login atau tautan login di sini jika tidak ada pengguna yang diotentikasi -->
                         @endif
                     </ul> --}}
-                    
+
                 </ul>
             </nav><!-- .navbar -->
 

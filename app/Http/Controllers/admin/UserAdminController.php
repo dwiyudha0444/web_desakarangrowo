@@ -1,24 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Berita;
-use App\Models\Anggota;
 use App\Models\User;
 use DB;
 
-class HomeController extends Controller
+class UserAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $berita = Berita::orderBy('id','DESC')->get();
-        $anggota = Anggota::orderBy('id','DESC')->get();
-        return view('user.main',compact('berita','anggota'));
+        $user = User::orderBy('id','DESC')->get();
+        return view('admin.user.index',compact('user'));
     }
 
     /**
@@ -42,8 +39,7 @@ class HomeController extends Controller
      */
     public function show(string $id)
     {
-        $ta = Berita::find($id);
-        return view('user.berita.detail',compact('ta'));
+        //
     }
 
     /**
@@ -51,7 +47,8 @@ class HomeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ta = User::find($id);
+        return view('admin.user.edit',compact('ta'));
     }
 
     /**
@@ -59,7 +56,19 @@ class HomeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'role' => 'required'
+            ]);
+            
+            
+            DB::table('users')->where('id',$id)->update(
+                [
+                    'role' => $request->role,
+                    'created_at' => now(),
+              ]);
+            
+            return redirect('/user')
+            ->with('success','Data Berhasil Diubah');
     }
 
     /**
@@ -67,6 +76,9 @@ class HomeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $ta = User::find($id);
+        User::where('id',$id)->delete();
+        return redirect()->route('user.index')
+            ->with('success','Data Berhasil Dihapus');
     }
 }
