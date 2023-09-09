@@ -15,7 +15,7 @@
                         dikelola oleh tim desa setempat. Dengan memanfaatkan website penyelenggaraan pelayanan publik dapat
                         dilakukan secara cepat dan mudah</p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                        <a href="https://www.youtube.com/watch?v=ToYaalEAGcY"
                             class="glightbox btn-watch-video d-flex align-items-center"><i
                                 class="bi bi-play-circle"></i><span>Watch Video</span></a>
                     </div>
@@ -34,28 +34,28 @@
                     <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-easel"></i></div>
-                            <h4 class="title white-text">Lorem Ipsum</h4>
+                            <h4 class="title white-text">Pelayanan Masyarakat</h4>
                         </div>
                     </div><!--End Icon Box -->
 
                     <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-gem"></i></div>
-                            <h4 class="title white-text">Sed ut perspiciatis</h4>
+                            <h4 class="title white-text">Potensi Desa</h4>
                         </div>
                     </div><!--End Icon Box -->
 
                     <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-geo-alt"></i></div>
-                            <h4 class="title white-text">Magni Dolores</h4>
+                            <h4 class="title white-text">Pembangunan Desa</h4>
                         </div>
                     </div><!--End Icon Box -->
 
                     <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
                         <div class="icon-box">
                             <div class="icon"><i class="bi bi-command"></i></div>
-                            <h4 class="title white-text">Nemo Enim</h4>
+                            <h4 class="title white-text">Keuangan Desa</h4>
                         </div>
                     </div><!--End Icon Box -->
 
@@ -175,7 +175,7 @@
         <!-- ======= Profile Desa Section ======= -->
         <section id="call-to-action" class="call-to-action">
             <div class="container text-center" data-aos="zoom-out">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                <a href="https://www.youtube.com/watch?v=ToYaalEAGcY" class="glightbox play-btn"></a>
                 <h3>Profile Desa</h3>
                 <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit

@@ -41,6 +41,12 @@
 
                       <li>
                           <hr class="dropdown-divider">
+                          
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <li><button class="dropdown-item" href="#">Logout</button></li>
+                            </form>
+                        
                       </li>
 
                   </ul><!-- End Profile Dropdown Items -->
