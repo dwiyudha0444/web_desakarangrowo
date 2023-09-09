@@ -15,9 +15,11 @@
                         dikelola oleh tim desa setempat. Dengan memanfaatkan website penyelenggaraan pelayanan publik dapat
                         dilakukan secara cepat dan mudah</p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="https://www.youtube.com/watch?v=ToYaalEAGcY"
+                        @foreach ($linkyt as $ta)
+                        <a href="{{ $ta->link }}"
                             class="glightbox btn-watch-video d-flex align-items-center"><i
                                 class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
@@ -175,12 +177,12 @@
         <!-- ======= Profile Desa Section ======= -->
         <section id="call-to-action" class="call-to-action">
             <div class="container text-center" data-aos="zoom-out">
-                <a href="https://www.youtube.com/watch?v=ToYaalEAGcY" class="glightbox play-btn"></a>
+                @foreach ($linkyt as $ta)
+                <a href="{{ $ta->link }}" class="glightbox play-btn"></a>
                 <h3>Profile Desa</h3>
-                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                    anim id est laborum.</p>
+                <p>{{ $ta->keterangan }}</p>
                 <a class="cta-btn" href="#">Profile Desa</a>
+                @endforeach
             </div>
         </section><!-- End Profile Desa Section -->
 

@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\DashboardAdminController;
 use App\Http\Controllers\admin\BeritaAdminController;
 use App\Http\Controllers\admin\AnggotaAdminController;
 use App\Http\Controllers\admin\UserAdminController;
+use App\Http\Controllers\admin\LinkytAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +33,12 @@ Route::resource('/dashboard',DashboardAdminController::class)->middleware('auth'
 Route::resource('/beritaa',BeritaAdminController::class)->middleware('auth');
 Route::resource('/anggotaa',AnggotaAdminController::class)->middleware('auth');
 Route::resource('/user',UserAdminController::class)->middleware('auth');
+Route::resource('/linkyt',LinkytAdminController::class)->middleware('auth');
 
 Route::get('/anggotaa-edit/{id}',[AnggotaAdminController::class,'edit'])->middleware('auth');
 Route::get('/beritaa-edit/{id}',[BeritaAdminController::class,'edit'])->middleware('auth');
 Route::get('/user-edit/{id}',[UserAdminController::class,'edit'])->middleware('auth');
+Route::get('/linkyt-edit/{id}',[LinkytAdminController::class,'edit'])->middleware('auth');
 
 //client
 Route::resource('/home',HomeController::class);

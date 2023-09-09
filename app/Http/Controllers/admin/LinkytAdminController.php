@@ -1,26 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Berita;
-use App\Models\Anggota;
-use App\Models\User;
 use App\Models\Linkyt;
 use DB;
 
-class HomeController extends Controller
+class LinkytAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $berita = Berita::orderBy('id','DESC')->get();
-        $anggota = Anggota::orderBy('id','DESC')->get();
         $linkyt = Linkyt::orderBy('id','DESC')->get();
-        return view('user.main',compact('berita','anggota','linkyt'));
+        return view('admin.linkyt.index',compact('linkyt'));
     }
 
     /**
@@ -44,8 +39,7 @@ class HomeController extends Controller
      */
     public function show(string $id)
     {
-        $ta = Berita::find($id);
-        return view('user.berita.detail',compact('ta'));
+        //
     }
 
     /**
@@ -53,7 +47,8 @@ class HomeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ta = Linkyt::find($id);
+        return view('admin.linkyt.edit',compact('ta'));
     }
 
     /**
@@ -61,7 +56,21 @@ class HomeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'link' => 'required',
+            'keterangan' => 'required'
+            ]);
+            
+            
+            DB::table('linkyt')->where('id',$id)->update(
+                [
+                    'link' => $request->link,
+                    'keterangan' => $request->keterangan,
+                    'created_at' => now(),
+              ]);
+            
+            return redirect('/linkyt')
+            ->with('success','Data Berhasil Diubah');
     }
 
     /**
