@@ -90,7 +90,7 @@
         @endif
         <form action="/login" method="POST">
             @csrf
-            <img class="mb-4" src="{{ asset('home/assets/img/new/logo.png') }}" alt="">
+            {{-- <img class="mb-4" src="{{ asset('logo2.png') }}" alt=""> --}}
             <h1 class="h3 mb-3 fw-normal">Please login</h1>
 
             <div class="row mb-3">

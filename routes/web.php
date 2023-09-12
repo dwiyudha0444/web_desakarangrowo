@@ -24,9 +24,7 @@ use App\Http\Controllers\admin\LinkytAdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/home',HomeController::class);
 
 //admin
 Route::resource('/dashboard',DashboardAdminController::class)->middleware('auth');
